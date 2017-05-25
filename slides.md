@@ -41,7 +41,7 @@
 ## Slack API
 * Provides Node-Style Callbacks
    * **`RTM`** and  **`Web`** API
-* Low Level API 
+* Powerful Low Level API 
     * Allows you the creator to use parts of the API surface that you want to use without the entire payload.
     * Methods match Slack's API documentation
 * Install
@@ -55,15 +55,16 @@ Note: This Slack API is a thin wrapper
 ---
 
 ## Slack API setup
-* Defined at the beginning of the file
+* Probably Defined at the beginning of the file
 ~~~
 var slack = require('slack');
-var bot = slack.rtm.client();
+var   bot = slack.rtm.client();
 ~~~
 
 Note: Obtains a username our of a user id
 
 ---
+
 
 ## Reaction Bot
 
@@ -74,23 +75,25 @@ bot.listen({token:token})
 // on RTM message event
 bot.message(function(msg){ 
 
-    var name = 'thumbsup'; // Select Emoji
-    var channel = msg.channel; // Grab the channel the message was recieved from
-    var timestamp = msg.ts // Grab the timestamp of the mssage
-    var parms = {token, name, channel, timestamp} // create a parameter object
-    slack.reactions.add(parms, (err, data) => {  // Use Slack Web API Node Style
+    var      name = 'thumbsup';  // Select Emoji
+    var   channel = msg.channel; // Grab the channel the message was received from
+    var timestamp = msg.ts       // Grab the timestamp of the message
+    var    params = {token, name, channel, timestamp} // create a parameter object
+
+    slack.reactions.add(params, (err, data) => {       // Use Slack Web API Node Style
+
         if(err){
             console.log("Error: ",err); // Will Print Error
         } else {
-            console.log("Success: Added Reaction"); // Print Success
+            console.log("Success: Added Reaction"); // Will Print Success
         }
+
      });
-    
 });
 
 ~~~
 
-Note: Obtains a username our of a user id
+Note: Obtains a username our of a user id ** Change the font size on this slide...
 
 ---
 
@@ -105,12 +108,59 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
-## Slack_Upload
+## Upload Bot
 
-* Point 1
-* Point 2
+* Uploading can be tricky, node-slack-upload makes it easy!
+* Provides support for multipart and content variables
+* Install
+~~~
+npm install node-slack-upload
+~~~
 
 Note: Haiden
+
+---
+
+## node-slack-upload Setup
+
+* Probably Defined at the beginning of the file
+~~~
+var Slack_Upload = require('node-slack-upload');
+var _upLoader = new Slack_Upload(token);
+~~~
+
+Note: Haiden
+
+---
+
+## Upload Bot
+
+~~~
+_upLoader.uploadFile({
+       file: fs.createReadStream('file_path'), // open a File
+       channels: message.channel               // the channel id you with to upload too
+       }, function(err, data) {                // callback
+             if (err) {
+                    console.error(err);        // error happened
+              }
+            else {
+                    console.log('Successfully uploaded files'); // success 
+              }
+    });
+~~~
+
+Note: Haiden
+
+---
+
+##  slack-node-upload Documentation
+
+* npm Documentation
+    * https://www.npmjs.com/package/node-slack-upload
+* node-slack-upload Github
+    * https://github.com/elegantmonkeys/node-slack-upload
+
+Note: Haiden ~~~ Resources and Documentation
 
 ---
 
