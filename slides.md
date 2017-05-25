@@ -55,7 +55,7 @@ Note: This Slack API is a thin wrapper
 ---
 
 ## Slack API setup
-* Probably Defined at the beginning of the file
+* Probably defined at the beginning of the file
 ~~~
 var slack = require('slack');
 var   bot = slack.rtm.client();
@@ -123,10 +123,11 @@ Note: Haiden
 
 ## node-slack-upload Setup
 
-* Probably Defined at the beginning of the file
+* Probably defined at the beginning of the file
 ~~~
 var Slack_Upload = require('node-slack-upload');
-var _upLoader = new Slack_Upload(token);
+var           fs = require('fs');
+var    _upLoader = new Slack_Upload(token);
 ~~~
 
 Note: Haiden
