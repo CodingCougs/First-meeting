@@ -40,8 +40,12 @@
 
 ## Slack API
 
-* Point 1
-* Point 2
+* Slack Web and RTM API client. 🌱🙌💕
+
+> https://www.npmjs.com/package/slack
+> https://github.com/smallwins/slack
+
+* Install
 
 ---
 
