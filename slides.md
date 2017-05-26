@@ -15,6 +15,17 @@ Note: Hackathon definition
 
 ---
 
+## What is Slack?
+Slack is a team communication tool, that makes collaboration and messaging easy.
+
+* Channels
+* Direct Messages
+* Share files
+* Search 
+* **`Integration`**
+
+---
+
 ## Botkit
 
 * Point 1
