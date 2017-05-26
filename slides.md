@@ -5,29 +5,13 @@
 
 ## Hackathon!
 
-* Point 1
-* Point 2
+“A hackathon, a hacker neologism, is an event when programmers meet to do collaborative computer programming.” -Wikipedia
+
+Note: Hackathon definition
 
 ---
 
-## What is Slack?
-
-* Point 1
-* Point 2
-
----
-
-## Slackbots
-
-* Point 1
-* Point 2
-
----
-
-## Node JS & JavaScript
-
-* Point 1
-* Point 2
+![alt text](https://raw.githubusercontent.com/HaidenD/coding_cougs/master/May_27th_Hackathon_Event/Final_Flyers/Black_Poster.png) <!-- .element height="40%" width="50%" -->
 
 ---
 
