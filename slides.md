@@ -26,6 +26,111 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 
 ---
 
+## Slackbots
+
+* Point 1
+* Point 2
+
+---
+
+## Node JS & JavaScript
+
+* Point 1
+* Point 2
+
+---
+
+## Install Node.js and NPM
+
+Open the terminal
+
+* To install node
+
+~~~ 
+brew install node
+~~~
+
+* To see if Node is installed
+
+~~~ 
+node -v
+~~~
+
+* To see if NPM is installed
+
+~~~ 
+npm -v
+~~~
+
+Note: How to install Node and NPM
+
+---
+
+## Create a node project
+
+* Create a package.json file
+~~~ 
+npm init
+~~~
+
+* Create a new file called **`index.js`**
+~~~ 
+touch index.js
+~~~
+
+* Add print statement to your index.js file
+~~~ 
+console.log('Hello World');
+~~~
+
+* Run your application!
+~~~ 
+node index.js
+~~~
+
+Note: Create a hello world node project
+
+---
+
+## Install a package 
+
+* Install dependencies in the node module
+~~~ 
+npm install express
+~~~
+
+* Print Hello World in your browser
+
+~~~
+var express = require('express')
+var app = express()
+ 
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+ 
+app.listen(3000)
+~~~
+
+Note: Create a hello world node project that runs on a server
+
+---
+
+## Test your application
+
+* Run your application!
+~~~ 
+node index.js
+~~~
+
+* In your browser go to 
+
+http://localhost:3000 
+
+Note: Test Application
+
+---
+
 ## Botkit
 
 * Point 1
