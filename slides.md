@@ -168,8 +168,11 @@ Note: Obtains a username our of a user id
 
 ## Reaction Bot
 
-~~~
-// start listening to the slack team associated to the token
+
+
+~~~ 
+
+// start listening to the slack team associated to the token 
 bot.listen({token:token})
 
 // on RTM message event
@@ -192,6 +195,7 @@ bot.message(function(msg){
 });
 
 ~~~
+<!-- .element: style=" font-size:16px !important " --> 
 
 Note: Obtains a username our of a user id ** Change the font size on this slide...
 
@@ -208,7 +212,7 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
-## Upload Bot
+## node-slack-upload
 
 * Uploading can be tricky, node-slack-upload makes it easy!
 * Provides support for multipart and content variables
@@ -249,6 +253,7 @@ _upLoader.uploadFile({
               }
     });
 ~~~
+<!-- .element: style=" font-size:16px !important " --> 
 
 Note: Haiden
 
@@ -257,9 +262,9 @@ Note: Haiden
 ##  slack-node-upload Documentation
 
 * npm Documentation
-    * https://www.npmjs.com/package/node-slack-upload
+    * https://www.npmjs.com/package/node-slack-upload <!-- .element: style=" font-size:35px !important " --> 
 * node-slack-upload Github
-    * https://github.com/elegantmonkeys/node-slack-upload
+    * https://github.com/elegantmonkeys/node-slack-upload <!-- .element: style=" font-size:35px !important " --> 
 
 Note: Haiden ~~~ Resources and Documentation
 
