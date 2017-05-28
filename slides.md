@@ -26,10 +26,20 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 
 ---
 
-## Slackbots
+## Slackbots: Why
 
-* Point 1
-* Point 2
+* A cool project to learn something new!
+* Very helpful for those that use Slack as their primary form of communication
+
+---
+
+## Slackbots: What
+Slackbots are useful bots that can be programmed to fufill a multitude of functions
+
+* Be the HR representative and answer common questions
+* Personal secretary for reminders, deadlines, and possibly 
+* Respond to custom messages
+* Link users to integrated applications
 
 ---
 
