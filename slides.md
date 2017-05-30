@@ -280,10 +280,36 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
-## Event, RTM
+## RTM API
+Real Time Messagine (RTM) API plays an important role when building a slackbot!
+Most, if not all, actions that happen within a Slack group will produce what is called an event.
+These events will hold key information on what has happened which a programmer can use.
+It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
 
-* Point 1
-* Point 2
+---
+
+## RTM Event Type
+* Example: Using botkit - index.js
+
+
+~~~
+var Botkit = require('botkit'); // imports botkit API
+
+var controller = Botkit.slackbot({
+    require_delivery: true,
+});
+
+
+controller.hears (
+    ["Hello"],["direct_message"], function(bot, message) {
+
+    if(message.text.toLowerCase() === "hello"){
+        bot.reply(message, 'Hello there <@'+message.user+'>');
+    }
+});
+
+// Outputs: 'Hi there @current_user'
+~~~
 
 ---
 
