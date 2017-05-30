@@ -315,8 +315,22 @@ controller.hears (
 
 ## Heroku 
 
-* Point 1
-* Point 2
+* **`Heroku`** is a great container based cloud platform for node applications. 
+* Using **`Hekoku`**, we will be able focus on the development of our applications instead of worrying about our lack of infrastructure
+* Heroku
+    * https://www.heroku.com/
+* Heroku Setup
+    * https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku
+
+---
+
+## Still Feeling Lost?
+
+ * Useful Documentation that will help
+    * Botkit Conversation
+        * https://tinyurl.com/yamtc5po
+    * Working with Slack Integrations
+        * https://tinyurl.com/ydfcskw7
 
 ---
 
