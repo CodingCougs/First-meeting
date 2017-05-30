@@ -35,8 +35,16 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 
 ## Node JS & JavaScript
 
-* Point 1
-* Point 2
+* Node.js - "Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side."-Wikipedia
+* JavaScript - "JavaScript (JS) is a lightweight interpreted or Just In Time-compiled programming language with first-class functions."
+
+
+---
+
+## First-Class Function
+
+*   https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+
 
 ---
 
@@ -133,8 +141,15 @@ Note: Test Application
 
 ## Botkit
 
-* Point 1
-* Point 2
+* Botkit is a simple library to build bots for slack.
+* Very simple to use.
+* Botkit is node based and it allows to utilize any node package to get any functionality.
+* Botkit allows you to hear, reply, and have multi-message conversations.
+
+---
+
+## Botkit Documentation
+* https://www.botkit.ai
 
 ---
 
