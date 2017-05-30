@@ -26,10 +26,20 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 
 ---
 
-## Slackbots
+## Slackbots: Why
 
-* Point 1
-* Point 2
+* A cool project to learn something new!
+* Very helpful for those that use Slack as their primary form of communication
+
+---
+
+## Slackbots: What
+Slackbots are useful bots that can be programmed to fufill a multitude of functions
+
+* Be the HR representative and answer common questions
+* Personal secretary for reminders, deadlines, and possibly 
+* Respond to custom messages
+* Link users to integrated applications
 
 ---
 
@@ -285,17 +295,57 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
-## Event, RTM
+## RTM API
+Real Time Messagine (RTM) API plays an important role when building a slackbot!
+Most, if not all, actions that happen within a Slack group will produce what is called an event.
+These events will hold key information on what has happened which a programmer can use.
+It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
 
-* Point 1
-* Point 2
+---
+
+## RTM Event Type
+* Example: Using botkit - index.js
+
+
+~~~
+var Botkit = require('botkit'); // imports botkit API
+
+var controller = Botkit.slackbot({
+    require_delivery: true,
+});
+
+
+controller.hears (
+    ["Hello"],["direct_message"], function(bot, message) {
+
+    if(message.text.toLowerCase() === "hello"){
+        bot.reply(message, 'Hello there <@'+message.user+'>');
+    }
+});
+
+// Outputs: 'Hi there @current_user'
+~~~
 
 ---
 
 ## Heroku 
 
-* Point 1
-* Point 2
+* **`Heroku`** is a great container based cloud platform for node applications. 
+* Using **`Hekoku`**, we will be able focus on the development of our applications instead of worrying about our lack of infrastructure
+* Heroku
+    * https://www.heroku.com/
+* Heroku Setup
+    * https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku
+
+---
+
+## Still Feeling Lost?
+
+ * Useful Documentation that will help
+    * Botkit Conversation
+        * https://tinyurl.com/yamtc5po
+    * Working with Slack Integrations
+        * https://tinyurl.com/ydfcskw7
 
 ---
 
