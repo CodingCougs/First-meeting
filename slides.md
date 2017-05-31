@@ -31,6 +31,7 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 * A cool project to learn something new!
 * Very helpful for those that use Slack as their primary form of communication
 
+![alt text](https://a.slack-edge.com/66f9/img/slackbot_192.png) <!-- .element height="30%" width="30%" -->
 ---
 
 ## Slackbots: What
@@ -82,6 +83,11 @@ npm -v
 
 Note: How to install Node and NPM
 
+---
+## Install Node.js and NPM alt.
+Go to the link provided
+
+* https://nodejs.org/en/download/
 ---
 
 ## Create a node project
@@ -297,34 +303,46 @@ Note: Haiden ~~~ Resources and Documentation
 
 ## RTM API
 Real Time Messagine (RTM) API plays an important role when building a slackbot!
-Most, if not all, actions that happen within a Slack group will produce what is called an event.
-These events will hold key information on what has happened which a programmer can use.
-It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
+
+* Most, if not all, actions that happen within a Slack group will produce what is called an event.
+* These events will hold key information on what has happened which a programmer can use.
+* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
 
 ---
 
-## RTM Event Type
+## RTM Event Type: Ambient
 * Example: Using botkit - index.js
 
 
 ~~~
-var Botkit = require('botkit'); // imports botkit API
+// imports the botkit API
+var Botkit = require('botkit');
 
+// assigns a variable to handle events
 var controller = Botkit.slackbot({
     require_delivery: true,
 });
 
-
+// a simple listener function
+// note that the event is a ambient
 controller.hears (
-    ["Hello"],["direct_message"], function(bot, message) {
+    // The bot will listen for the direct message of "Hi"
+    ["Hi"],["ambient"], function(bot, message) {
 
-    if(message.text.toLowerCase() === "hello"){
-        bot.reply(message, 'Hello there <@'+message.user+'>');
+    // It will reply back with "Hello!"
+    if(message.text.toLowerCase() === "hi"){
+        bot.reply(message, 'Hello!');
     }
 });
 
-// Outputs: 'Hi there @current_user'
+// Outputs: 'Hello!'
 ~~~
+
+---
+
+## RTM Event Example: Output
+
+![alt text](https://raw.githubusercontent.com/CodingCougs/First-meeting/master/slackbot_example.png) <!-- .element height="120%" width="120%" -->
 
 ---
 
