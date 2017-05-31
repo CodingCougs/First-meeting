@@ -7,66 +7,326 @@
         <link rel="stylesheet" href="./css/theme/moon.css" id="theme">
         <link rel="stylesheet" href="./css/highlight/zenburn.css">
         <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
-        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
-          
+          <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
     </head>
     <body>
 
         <div class="reveal">
             <div class="slides"><section  data-markdown><script type="text/template"># Coding Cougs
 
-* Point 1
-* Point 2
 </script></section><section  data-markdown><script type="text/template">
-# Hackathon!
+## Hackathon!
 
-* Point 1
-* Point 2
+“A hackathon, a hacker neologism, is an event when programmers meet to do collaborative computer programming.” -Wikipedia
+
+<aside class="notes"><p>Hackathon definition</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## What is Slack?
+Slack is a team communication tool, that makes collaboration and messaging easy.
+
+* Channels
+* Direct Messages
+* Share files
+* Search 
+* **`Integration`**
 </script></section><section  data-markdown><script type="text/template">
-# What is Slack?
+## Slackbots: Why
 
-* Point 1
-* Point 2
+* A cool project to learn something new!
+* Very helpful for those that use Slack as their primary form of communication
+
 </script></section><section  data-markdown><script type="text/template">
-# Slackbots
+## Slackbots: What
+Slackbots are useful bots that can be programmed to fufill a multitude of functions
 
-* Point 1
-* Point 2
+* Be the HR representative and answer common questions
+* Personal secretary for reminders, deadlines, and possibly 
+* Respond to custom messages
+* Link users to integrated applications
 </script></section><section  data-markdown><script type="text/template">
-# Node JS & JavaScript
+## Node JS & JavaScript
 
-* Point 1
-* Point 2
+* Node.js - "Node.js is an open-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side."-Wikipedia
+* JavaScript - "JavaScript (JS) is a lightweight interpreted or Just In Time-compiled programming language with first-class functions."
+
 </script></section><section  data-markdown><script type="text/template">
-# Botkit
+## First-Class Function
 
-* Point 1
-* Point 2
+*   https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+
 </script></section><section  data-markdown><script type="text/template">
-# Slack API
+## Install Node.js and NPM
 
-* Point 1
-* Point 2
+Open the terminal
+
+* To install node
+
+~~~ 
+brew install node
+~~~
+
+* To see if Node is installed
+
+~~~ 
+node -v
+~~~
+
+* To see if NPM is installed
+
+~~~ 
+npm -v
+~~~
+
+<aside class="notes"><p>How to install Node and NPM</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Install Node.js and NPM alt.
+
+Go to the link provided
+
+* https://nodejs.org/en/download/
 </script></section><section  data-markdown><script type="text/template">
-# Slack_Upload
+## Create a node project
 
-* Point 1
-* Point 2
+* Create a package.json file
+~~~ 
+npm init
+~~~
+
+* Create a new file called **`index.js`**
+~~~ 
+touch index.js
+~~~
+
+* Add print statement to your index.js file
+~~~ 
+console.log('Hello World');
+~~~
+
+* Run your application!
+~~~ 
+node index.js
+~~~
+
+<aside class="notes"><p>Create a hello world node project</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Install a package 
+
+* Install dependencies in the node module
+~~~ 
+npm install express
+~~~
+
+* Print Hello World in your browser
+
+~~~
+var express = require('express')
+var app = express()
+ 
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+ 
+app.listen(3000)
+~~~
+
+<aside class="notes"><p>Create a hello world node project that runs on a server</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Test your application
+
+* Run your application!
+~~~ 
+node index.js
+~~~
+
+* In your browser go to 
+
+http://localhost:3000 
+
+<aside class="notes"><p>Test Application</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## RTM API
+Real Time Messaging (RTM) API plays an important role when building a slackbot!
+
+* Most, if not all, actions that happen within a Slack group will produce what is called an event.
+* These events will hold key information on what has happened which a programmer can use.
+* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
 </script></section><section  data-markdown><script type="text/template">
-# Event, RTM
+## RTM Event Type: Ambient
+* Example: Using botkit - index.js
 
-* Point 1
-* Point 2
+
+~~~
+// imports the botkit API
+var Botkit = require('botkit');
+
+// assigns a variable to handle events
+var controller = Botkit.slackbot({
+    require_delivery: true,
+});
+
+// a simple listener function
+// note that the event is a ambient
+controller.hears (
+    // The bot will listen for the direct message of "Hi"
+    ["Hi"],["ambient"], function(bot, message) {
+
+    // It will reply back with "Hello!"
+    if(message.text.toLowerCase() === "hi"){
+        bot.reply(message, 'Hello!');
+    }
+});
+
+// Outputs: 'Hello!'
+~~~
 </script></section><section  data-markdown><script type="text/template">
-# Heroku <i class="fa fa-cloud-upload" aria-hidden="true"></i>
 
-* Point 1
-* Point 2
+## Slack API
+* Provides Node-Style Callbacks
+   * **`RTM`** and  **`Web`** API
+* Powerful Low Level API 
+    * Allows you the creator to use parts of the API surface that you want to use without the entire payload.
+    * Methods match Slack's API documentation
+* Install
 
----
-## Second slide
+~~~
+npm install slack
+~~~
 
-> Best quote ever.
+<aside class="notes"><p>This Slack API is a thin wrapper</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Slack API setup
+* Probably defined at the beginning of the file
+~~~
+var slack = require('slack');
+var   bot = slack.rtm.client();
+~~~
+
+<aside class="notes"><p>Obtains a username our of a user id</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+
+## Reaction Bot
+
+
+
+~~~ 
+
+// start listening to the slack team associated to the token 
+bot.listen({token:token})
+
+// on RTM message event
+bot.message(function(msg){ 
+
+    var      name = 'thumbsup';  // Select Emoji
+    var   channel = msg.channel; // Grab the channel the message was received from
+    var timestamp = msg.ts       // Grab the timestamp of the message
+    var    params = {token, name, channel, timestamp} // create a parameter object
+
+    slack.reactions.add(params, (err, data) => {       // Use Slack Web API Node Style
+
+        if(err){
+            console.log("Error: ",err); // Will Print Error
+        } else {
+            console.log("Success: Added Reaction"); // Will Print Success
+        }
+
+     });
+});
+
+~~~
+<!-- .element: style=" font-size:16px !important " --> 
+
+<aside class="notes"><p>Obtains a username our of a user id ** Change the font size on this slide...</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+##  Slack API Documentation
+
+* npm Documentation
+    * https://www.npmjs.com/package/slack
+* Slack Github
+    * https://github.com/smallwins/slack
+
+<aside class="notes"><p>Haiden ~~~ Resources and Documentation</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## node-slack-upload
+
+* Uploading can be tricky, node-slack-upload makes it easy!
+* Provides support for multipart and content variables
+* Install
+~~~
+npm install node-slack-upload
+~~~
+
+<aside class="notes"><p>Haiden</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## node-slack-upload Setup
+
+* Probably defined at the beginning of the file
+~~~
+var Slack_Upload = require('node-slack-upload');
+var           fs = require('fs');
+var    _upLoader = new Slack_Upload(token);
+~~~
+
+<aside class="notes"><p>Haiden</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Upload Bot
+
+~~~
+_upLoader.uploadFile({
+       file: fs.createReadStream('file_path'), // open a File
+       channels: message.channel               // the channel id you with to upload too
+       }, function(err, data) {                // callback
+             if (err) {
+                    console.error(err);        // error happened
+              }
+            else {
+                    console.log('Successfully uploaded files'); // success 
+              }
+    });
+~~~
+<!-- .element: style=" font-size:16px !important " --> 
+
+<aside class="notes"><p>Haiden</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+##  slack-node-upload Documentation
+
+* npm Documentation
+    * https://www.npmjs.com/package/node-slack-upload <!-- .element: style=" font-size:35px !important " --> 
+* node-slack-upload Github
+    * https://github.com/elegantmonkeys/node-slack-upload <!-- .element: style=" font-size:35px !important " --> 
+
+<aside class="notes"><p>Haiden ~~~ Resources and Documentation</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Botkit
+
+* Botkit is a simple library to build bots for slack.
+* Very simple to use.
+* Botkit is node based and it allows to utilize any node package to get any functionality.
+* Botkit allows you to hear, reply, and have multi-message conversations.
+</script></section><section  data-markdown><script type="text/template">
+## Botkit Documentation
+* https://www.botkit.ai
+</script></section><section  data-markdown><script type="text/template">
+## Heroku 
+
+* **`Heroku`** is a great container based cloud platform for node applications. 
+* Using **`Hekoku`**, we will be able focus on the development of our applications instead of worrying about our lack of infrastructure
+* Heroku
+    * https://www.heroku.com/
+* Heroku Setup
+    * https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku
+</script></section><section  data-markdown><script type="text/template">
+## Still Feeling Lost?
+
+ * Useful Documentation that will help
+    * Botkit Conversation
+        * https://tinyurl.com/yamtc5po
+    * Working with Slack Integrations
+        * https://tinyurl.com/ydfcskw7
+</script></section><section  data-markdown><script type="text/template">
+## Questions?
+
+> Thank you.
 
 <aside class="notes"><p>speaker notes FTW!</p>
 </aside></script></section></div>

@@ -173,7 +173,6 @@ body {
 .reveal iframe {
   z-index: 1; }
 
-
 /** Prevents layering issues in certain browser/transition combinations */
 .reveal a {
   position: relative; }

@@ -11,10 +11,6 @@ Note: Hackathon definition
 
 ---
 
-![alt text](https://raw.githubusercontent.com/HaidenD/coding_cougs/master/May_27th_Hackathon_Event/Final_Flyers/Black_Poster.png) <!-- .element height="40%" width="50%" -->
-
----
-
 ## What is Slack?
 Slack is a team communication tool, that makes collaboration and messaging easy.
 
@@ -31,7 +27,7 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 * A cool project to learn something new!
 * Very helpful for those that use Slack as their primary form of communication
 
-![alt text](https://a.slack-edge.com/66f9/img/slackbot_192.png) <!-- .element height="30%" width="30%" -->
+
 ---
 
 ## Slackbots: What
@@ -84,10 +80,13 @@ npm -v
 Note: How to install Node and NPM
 
 ---
+
 ## Install Node.js and NPM alt.
+
 Go to the link provided
 
 * https://nodejs.org/en/download/
+
 ---
 
 ## Create a node project
@@ -155,19 +154,45 @@ Note: Test Application
 
 ---
 
-## Botkit
+## RTM API
+Real Time Messaging (RTM) API plays an important role when building a slackbot!
 
-* Botkit is a simple library to build bots for slack.
-* Very simple to use.
-* Botkit is node based and it allows to utilize any node package to get any functionality.
-* Botkit allows you to hear, reply, and have multi-message conversations.
+* Most, if not all, actions that happen within a Slack group will produce what is called an event.
+* These events will hold key information on what has happened which a programmer can use.
+* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
+
+---
+
+## RTM Event Type: Ambient
+* Example: Using botkit - index.js
+
+
+~~~
+// imports the botkit API
+var Botkit = require('botkit');
+
+// assigns a variable to handle events
+var controller = Botkit.slackbot({
+    require_delivery: true,
+});
+
+// a simple listener function
+// note that the event is a ambient
+controller.hears (
+    // The bot will listen for the direct message of "Hi"
+    ["Hi"],["ambient"], function(bot, message) {
+
+    // It will reply back with "Hello!"
+    if(message.text.toLowerCase() === "hi"){
+        bot.reply(message, 'Hello!');
+    }
+});
+
+// Outputs: 'Hello!'
+~~~
 
 ---
 
-## Botkit Documentation
-* https://www.botkit.ai
-
----
 
 ## Slack API
 * Provides Node-Style Callbacks
@@ -301,48 +326,17 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
-## RTM API
-Real Time Messagine (RTM) API plays an important role when building a slackbot!
+## Botkit
 
-* Most, if not all, actions that happen within a Slack group will produce what is called an event.
-* These events will hold key information on what has happened which a programmer can use.
-* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
-
----
-
-## RTM Event Type: Ambient
-* Example: Using botkit - index.js
-
-
-~~~
-// imports the botkit API
-var Botkit = require('botkit');
-
-// assigns a variable to handle events
-var controller = Botkit.slackbot({
-    require_delivery: true,
-});
-
-// a simple listener function
-// note that the event is a ambient
-controller.hears (
-    // The bot will listen for the direct message of "Hi"
-    ["Hi"],["ambient"], function(bot, message) {
-
-    // It will reply back with "Hello!"
-    if(message.text.toLowerCase() === "hi"){
-        bot.reply(message, 'Hello!');
-    }
-});
-
-// Outputs: 'Hello!'
-~~~
+* Botkit is a simple library to build bots for slack.
+* Very simple to use.
+* Botkit is node based and it allows to utilize any node package to get any functionality.
+* Botkit allows you to hear, reply, and have multi-message conversations.
 
 ---
 
-## RTM Event Example: Output
-
-![alt text](https://raw.githubusercontent.com/CodingCougs/First-meeting/master/slackbot_example.png) <!-- .element height="120%" width="120%" -->
+## Botkit Documentation
+* https://www.botkit.ai
 
 ---
 
