@@ -96,6 +96,7 @@ Go to the link provided
 
 ## Create a node project
 
+
 * Create a package.json file
 ~~~ 
 npm init
