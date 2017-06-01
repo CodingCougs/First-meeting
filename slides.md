@@ -328,6 +328,28 @@ Note: Haiden ~~~ Resources and Documentation
 
 ---
 
+## Text Editors
+
+* Download Visual Studio Code
+    * https://code.visualstudio.com/download
+
+* Download Atom
+    * https://atom.io
+
+---
+
+## Coding Cougs on GitHub
+
+* https://github.com/CodingCougs
+
+---
+
+## Coding Cougs on Slack
+
+* https://codingcougs.slack.com
+
+---
+
 ## Questions?
 
 > Thank you.

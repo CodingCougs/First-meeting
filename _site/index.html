@@ -14,7 +14,7 @@
 
         <div class="reveal">
             <div class="slides"><section  data-markdown><script type="text/template"># Coding Cougs
-
+* http://tinyurl.com/ycw28vvb
 </script></section><section  data-markdown><script type="text/template">
 ## Hackathon!
 
@@ -22,6 +22,7 @@
 
 <aside class="notes"><p>Hackathon definition</p>
 </aside></script></section><section  data-markdown><script type="text/template">
+
 ## What is Slack?
 Slack is a team communication tool, that makes collaboration and messaging easy.
 
@@ -145,41 +146,7 @@ http://localhost:3000
 
 <aside class="notes"><p>Test Application</p>
 </aside></script></section><section  data-markdown><script type="text/template">
-## RTM API
-Real Time Messaging (RTM) API plays an important role when building a slackbot!
 
-* Most, if not all, actions that happen within a Slack group will produce what is called an event.
-* These events will hold key information on what has happened which a programmer can use.
-* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
-</script></section><section  data-markdown><script type="text/template">
-## RTM Event Type: Ambient
-* Example: Using botkit - index.js
-
-
-~~~
-// imports the botkit API
-var Botkit = require('botkit');
-
-// assigns a variable to handle events
-var controller = Botkit.slackbot({
-    require_delivery: true,
-});
-
-// a simple listener function
-// note that the event is a ambient
-controller.hears (
-    // The bot will listen for the direct message of "Hi"
-    ["Hi"],["ambient"], function(bot, message) {
-
-    // It will reply back with "Hello!"
-    if(message.text.toLowerCase() === "hi"){
-        bot.reply(message, 'Hello!');
-    }
-});
-
-// Outputs: 'Hello!'
-~~~
-</script></section><section  data-markdown><script type="text/template">
 
 ## Slack API
 * Provides Node-Style Callbacks
@@ -323,6 +290,22 @@ _upLoader.uploadFile({
         * https://tinyurl.com/yamtc5po
     * Working with Slack Integrations
         * https://tinyurl.com/ydfcskw7
+</script></section><section  data-markdown><script type="text/template">
+## Text Editors
+
+* Download Visual Studio Code
+    * https://code.visualstudio.com/download
+
+* Download Atom
+    * https://atom.io
+</script></section><section  data-markdown><script type="text/template">
+## Coding Cougs on GitHub
+
+* https://github.com/CodingCougs
+</script></section><section  data-markdown><script type="text/template">
+## Coding Cougs on Slack
+
+* https://codingcougs.slack.com
 </script></section><section  data-markdown><script type="text/template">
 ## Questions?
 
