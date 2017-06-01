@@ -1,5 +1,5 @@
 # Coding Cougs
-
+* http://tinyurl.com/ycw28vvb
 
 ---
 
@@ -8,6 +8,10 @@
 “A hackathon, a hacker neologism, is an event when programmers meet to do collaborative computer programming.” -Wikipedia
 
 Note: Hackathon definition
+
+---
+
+![alt text](https://raw.githubusercontent.com/HaidenD/coding_cougs/master/May_27th_Hackathon_Event/Final_Flyers/Black_Poster.png) <!-- .element height="40%" width="50%" -->
 
 ---
 
@@ -27,6 +31,7 @@ Slack is a team communication tool, that makes collaboration and messaging easy.
 * A cool project to learn something new!
 * Very helpful for those that use Slack as their primary form of communication
 
+![alt text](https://a.slack-edge.com/66f9/img/slackbot_192.png) <!-- .element height="30%" width="30%" -->
 
 ---
 
@@ -154,44 +159,6 @@ Note: Test Application
 
 ---
 
-## RTM API
-Real Time Messaging (RTM) API plays an important role when building a slackbot!
-
-* Most, if not all, actions that happen within a Slack group will produce what is called an event.
-* These events will hold key information on what has happened which a programmer can use.
-* It's very helpful if you were to use other APIs such as botkit as they make it easy to access these events.
-
----
-
-## RTM Event Type: Ambient
-* Example: Using botkit - index.js
-
-
-~~~
-// imports the botkit API
-var Botkit = require('botkit');
-
-// assigns a variable to handle events
-var controller = Botkit.slackbot({
-    require_delivery: true,
-});
-
-// a simple listener function
-// note that the event is a ambient
-controller.hears (
-    // The bot will listen for the direct message of "Hi"
-    ["Hi"],["ambient"], function(bot, message) {
-
-    // It will reply back with "Hello!"
-    if(message.text.toLowerCase() === "hi"){
-        bot.reply(message, 'Hello!');
-    }
-});
-
-// Outputs: 'Hello!'
-~~~
-
----
 
 
 ## Slack API
